@@ -30,10 +30,7 @@ Siempre en el mismo directorio del archivo *docker-compose.yml*
 
 Nos va a devolver a nuestra consola, una consola dentro del contenedor de software.
 
-
-Una vez dentro ejecutamos el comando:
-
-**$** `cd /opt/back_end/marvel` 
+Automáticamente vamos a estar parados en el siguiente directorio: `/opt/back_end/marvel`. 
 
 ### 3. Iniciar el servidor
 (Siempre dentro de nuestro contenedor de software - Comando N°2)  
@@ -46,6 +43,16 @@ Tenemos que ir a la carpeta donde se encuentra el archivo *manage.py*
 **$** `python manage.py makemigrations`
 
 **$** `python manage.py migrate` 
+
+#### NOTA: Si se quiere sólo realizar las migracions correspondiente a una determinada aplicación del proyecto, podemos ejecutar los siguientes comandos:  
+
+**$** `python manage.py makemigrations nombre_aplicación`
+
+  - Ejemplo: **$** `python manage.py makemigrations e_commerce`
+
+**$** `python manage.py migrate nombre_aplicación` 
+
+  - Ejemplo: **$** `python manage.py migrate e_commerce`
 
 ### 5. Creamos un super usuario:  
 

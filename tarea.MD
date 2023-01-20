@@ -29,34 +29,38 @@ Habilite la entidad creada en clase "Comic" que se encuentra comentada en el arc
 Familiarícese con la aplicación, personalice el administrador de Django utilizando los atributos de admin.py.
 
 ### 5. Genere una nueva entidad en models.py 
-Diseñe una nueva entidad en models.py, llamada "wish_list" y agréguele los campos (columnas en la tabla resultante):
+Diseñe una nueva entidad en models.py, llamada "WishList" y agréguele los campos (columnas en la tabla resultante):
 * id
-* user_id
-* comic_id (Este campo debe ser un Foreign Key relacionando el id de la tabla "comic")
+* user (Este campo debe ser un Foreign Key relacionando con el modelo **User** que ofrece Django).
+* comic (Este campo debe ser un Foreign Key relacionando con el Modelo **Comic**).
 * favorite
 * cart
 * wished_qty
-* buied_qty 
+* bought_qty 
 
 Debe basarse en el siguiente diseño de entidades:
 
 ![Entidades](/entidades.png)
 
 Tip:
-El atributo "comic_id" es un campo de tipo FK, para poder implementarlo utilizaremos:
+El atributo "comic" del modelo es un campo de tipo FK, para poder implementarlo utilizaremos:
 
 ```
-    comic_id = models.ForeignKey(Comic,
-                                 verbose_name='Comic',
-                                 on_delete=models.DO_NOTHING,
-                                 default=1, blank=True
-                                 )
-
+comic = models.ForeignKey(
+    Comic,
+    verbose_name='Comic',
+    on_delete=models.CASCADE,
+    default=1,
+    blank=True
+)
 ```
 Cuyos argumentos son:
 
-* Comic --> El nombre de la clase que hace referencia a la entidad "comic".
-* on_delete=models.DO_NOTHING --> Hace que al borrar un registro, se borren sus relacionados.
+* Comic --> El nombre de la clase (modelo) que hace referencia a la entidad "comic".
+* on_delete=models.CASCADE --> Hace que al borrar un registro, se borren sus relacionados.
+    - Links de Interés:
+      - [Documentación de Django](https://docs.djangoproject.com/en/3.2/ref/models/fields/#arguments)
+      - [Stack Overflow](https://stackoverflow.com/questions/38388423/what-does-on-delete-do-on-django-models)
 * default --> Valor por defecto si no se le agrega ninguno.
 * blank --> Permite que se inserte un registro con este campo vacío.
 
@@ -66,4 +70,4 @@ Haga que la nueva entidad aparezca en el administrador de Django, recuerde reali
 ---
 
 ## ¿Dudas?
-Ante cualquier inquietud, debe referirse a los canales especificados para su trato en inove.
+Ante cualquier inquietud, debe referirse a los canales especificados para su trato en Inove.
