@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from e_commerce import views
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("hola-mundo/", views.hola_mundo, name="hola-mundo"),
+    path("get-comic/", views.get_comic_api_view, name="get-comic")
 ]
