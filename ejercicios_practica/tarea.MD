@@ -14,21 +14,17 @@ Recuerde que no debe subir la base de datos al sistema, para ello se encuentra e
 ---
 
 ### 1. Utilizar el proyecto de "Marvel" visto en clase.
-Descargar el repositorio del material visto en clase, hacer que levante y configurarlo para que el mismo
-pueda trabajar con una base de datos de tipo "Postgres".
-Modifique las credenciales para el acceso en el archivo docker-compose.yml y haga que la aplicación pueda utilizarlas.
+Inicializar el contenedor de docker, compilar la imagen del repositorio con:
+**$** `docker-compose up`
 
 ### 2. Realizar las migraciones del sistema.
 Recuerde que para poder comenzar a utilizar el Django Admin, es necesario que el sistema se encuentre alineado con la base de datos. Para ello debemos realizar las migraciones de la aplicación y crear un nuevo superusuario.
 Los comandos necesarios se encuentran detallados en el archivo README.md
 
-### 3. Habilitar las entidades en models.py
-Habilite la entidad creada en clase "Comic" que se encuentra comentada en el archivo models.py.
-
-### 4. Personalice el administrador de Django.
+### 3. Personalice el administrador de Django.
 Familiarícese con la aplicación, personalice el administrador de Django utilizando los atributos de admin.py.
 
-### 5. Genere una nueva entidad en models.py 
+### 4. Genere una nueva entidad en models.py 
 Diseñe una nueva entidad en models.py, llamada "WishList" y agréguele los campos (columnas en la tabla resultante):
 * id
 * user (Este campo debe ser un Foreign Key relacionando con el modelo **User** que ofrece Django).
@@ -64,8 +60,46 @@ Cuyos argumentos son:
 * default --> Valor por defecto si no se le agrega ninguno.
 * blank --> Permite que se inserte un registro con este campo vacío.
 
+### 5. Realizar las migraciones del sistema.
+Recuerde hacer el `makekigartions` y el `migrate`.
+
 ### 6. Nueva entidad en Django Admin.
 Haga que la nueva entidad aparezca en el administrador de Django, recuerde realizar las migraciones previamente y lo trabajado en admin.py
+
+### 7. Completar la view llamada "get_comic_api_view()"
+Deberá compeltar una view basada en una función llamada "get_comic_api_view()", que se encuentra en el archivo "views.py" dentro de e-commerce. Esta view ya está configurada y el endpoint que se le adjudico (la URL) es `get-comic/`.
+
+Lo que deberá hacer que completar esa función la cual deberá retornar el siguiente JSON:
+```
+    {
+        "id": 1,
+        "marvel_comic": "1010",
+        "title": "Inove",
+        "stock_qty": 6,
+        "description": "Mi primer JSON en Django",
+        "price": 10.0,
+        "picture": "https://www.django-rest-framework.org/img/logo.png"
+    }
+```
+
+Recuerde que para que Django pueda renderizar (el endpoint retornar) un JSON, deberá retornar los datos con un JsonResponse.
+
+## ¡Hora de evaluar nuestro código!
+Puede evaluar que ha alcanzo los solicitado en el desafio ejecutando los tests que vienen dentro la carpeta ejercicios_practica dónde ha estando incoporando su código. Para eso debe realizar los siguientos:
+
+1 - Abrir una consola dentro de la carpeta ejercicios_practica
+
+2 - Lanzar el docker de ejercicios_practica (si es que está usando docker):\
+**$** `docker-compose up`
+
+3 - Abrir una nueva consola dentro de la carpeta ejercicios_practica
+
+4 - Ingresar su consola dentro del contenedor con el siguiente comando (si es que está usando docker):\
+**$** `docker exec -it modulo_3_tp bash`
+
+5 - Lance los tests con el siguiente comando:\
+**$** `pytest -s`
+
 
 ---
 
