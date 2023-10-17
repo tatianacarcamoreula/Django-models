@@ -61,13 +61,13 @@ Cuyos argumentos son:
 * blank --> Permite que se inserte un registro con este campo vacío.
 
 ### 5. Realizar las migraciones del sistema.
-Recuerde hacer el `makekigartions` y el `migrate`.
+Recuerde hacer el `makemigrations` y el `migrate`.
 
 ### 6. Nueva entidad en Django Admin.
 Haga que la nueva entidad aparezca en el administrador de Django, recuerde realizar las migraciones previamente y lo trabajado en admin.py
 
 ### 7. Completar la view llamada "get_comic_api_view()"
-Deberá compeltar una view basada en una función llamada "get_comic_api_view()", que se encuentra en el archivo "views.py" dentro de e-commerce. Esta view ya está configurada y el endpoint que se le adjudico (la URL) es `get-comic/`.
+Deberá compeltar una view basada en una función llamada "get_comic_api_view()", que se encuentra en el archivo "views.py" dentro de e-commerce. Esta view ya está configurada y el endpoint que se le adjudicó (la URL) es `get-comic/`.
 
 Lo que deberá hacer que completar esa función la cual deberá retornar el siguiente JSON:
 ```
@@ -85,16 +85,16 @@ Lo que deberá hacer que completar esa función la cual deberá retornar el sigu
 Recuerde que para que Django pueda renderizar (el endpoint retornar) un JSON, deberá retornar los datos con un JsonResponse.
 
 ## ¡Hora de evaluar nuestro código!
-Puede evaluar que ha alcanzo los solicitado en el desafio ejecutando los tests que vienen dentro la carpeta ejercicios_practica dónde ha estando incoporando su código. Para eso debe realizar los siguientos:
+Puede evaluar que ha alcanzo los solicitado en el desafio ejecutando los tests que vienen dentro la carpeta ejercicios_practica dónde ha estando incoporando su código. Para eso debe realizar los siguiente:
 
-1 - Abrir una consola dentro de la carpeta ejercicios_practica
+1 - Abrir una consola dentro de la carpeta **ejercicios_practica**.
 
-2 - Lanzar el docker de ejercicios_practica (si es que está usando docker):\
+2 - Lanzar el docker de ejercicios_practica (si es que está usando Docker):\
 **$** `docker-compose up`
 
-3 - Abrir una nueva consola dentro de la carpeta ejercicios_practica
+3 - Abrir una nueva consola dentro de la carpeta **ejercicios_practica**.
 
-4 - Ingresar su consola dentro del contenedor con el siguiente comando (si es que está usando docker):\
+4 - Ingresar su consola dentro del contenedor con el siguiente comando (si es que está usando Docker):\
 **$** `docker exec -it modulo_3_tp bash`
 
 5 - Lance los tests con el siguiente comando:\
